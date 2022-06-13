@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+            x:Class="TaxiAccountantV2.Views.TripPage"
+            Title="Trip"
+            IconImageSource="taxi.png"
+            Style="{StaticResource BarStyle}">
+
+    <ContentPage>
+
+        <Grid Margin="5">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--Location bar UI-->
+            <Frame Grid.Row="0" 
+                   VerticalOptions="Center">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <!--<ColumnDefinition Width="*"/>-->
+                    </Grid.ColumnDefinitions>
+
+                    <!--Location lable + icon-->
+                    <StackLayout Grid.Column="0" Orientation="Horizontal">
+
+                        <Image HorizontalOptions="Start" 
+                               Source="location.png" 
+                               Aspect="AspectFit" 
+                               Margin="0,0,10,0"/>
+
+                        <Label Style="{StaticResource LabelStyle}"  
+                               FontSize="Default" 
+                               HorizontalOptions="CenterAndExpand" 
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalTextAlignment="Center"
+                               x:Name="LocationLbl"/>
+
+                    </StackLayout>
+
+                    <!--Name of location-->
+                    <!--
+                    <Label Grid.Column="1"  
+                           Style="{StaticResource LabelStyle}" 
+                           Text="TEST LOCATION" 
+                           FontSize="Default" 
+                           HorizontalOptions="CenterAndExpand" 
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Center"/>
+                    -->
+                </Grid>
+            </Frame>
+
+            <!--Mode of transport UI-->
+            <Grid Grid.Row="1"
+                  VerticalOptions="CenterAndExpand">
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <!--Mode of transport heading-->
+                <Frame Grid.Row="0" 
+                       Grid.Column="0" 
+                       Grid.ColumnSpan="3" VerticalOptions="Center"
+                       BackgroundColor="Gold">
+                    
+                    <Label Style="{StaticResource LabelStyle}"
+                           Text="MODE OF TRANSPORT" 
+                           FontSize="Default" 
+                           HorizontalOptions="CenterAndExpand" 
+                           VerticalOptions="CenterAndExpand"
+                           HorizontalTextAlignment="Center"/>
+                </Frame>
+
+                <!--Carpool stack panel-->
+                <StackLayout Grid.Row="1" 
+                             Grid.Column="0" 
+                             Orientation="Horizontal"
+                             Margin="0,15,0,0"
+                             HorizontalOptions="CenterAndExpand" >
+                    
+                    <RadioButton VerticalOptions="CenterAndExpand" 
+                                 x:Name="carPoolRadio"/>
+
+                    <Image Source="carpool.png" 
+                           Aspect="AspectFit"
+                           VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+
+                <!--Mini-bus stack panel-->
+                <StackLayout Grid.Row="1" 
+                             Grid.Column="1"
+                             Orientation="Horizontal"
+                             Margin="0,15,0,0"
+                             HorizontalOptions="CenterAndExpand">
+
+                    <RadioButton VerticalOptions="CenterAndExpand" x:Name="miniBusRadio" />
+
+                    <Image Source="shuttle.png" 
+                           Aspect="AspectFit"
+                           VerticalOptions="CenterAndExpand"/>
+
+                </StackLayout>
+
+                <!--Bus stack panel-->
+                <StackLayout Grid.Row="1" 
+                             Grid.Column="2"
+                             Orientation="Horizontal"
+                             Margin="0,15,0,0"
+                             HorizontalOptions="CenterAndExpand">
+
+                    <RadioButton VerticalOptions="CenterAndExpand" x:Name="busRadio" />
+
+                    <Image Source="bus.png" 
+                           Aspect="AspectFit"
+                           VerticalOptions="CenterAndExpand"/>
+
+                </StackLayout>
+
+            </Grid>
+            
+            <!--Collection UI-->
+            <Grid Grid.Row="2" 
+                  Margin="10,35,10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Passenger UI-->
+                <StackLayout Orientation="Horizontal" 
+                             Grid.Row="0" 
+                             Grid.Column="0">
+                    
+                    <Image Source="passenger.png" 
+                           Aspect="AspectFit" 
+                           VerticalOptions="Center"/>
+
+                    <Label Text="PASSENGERS" 
+                           FontSize="Default" 
+                           VerticalOptions="Center" 
+                           TextColor="Black"
+                           FontAttributes="Bold"/>
+
+                </StackLayout>
+
+                <Picker x:Name="passengerPicker" 
+                        VerticalOptions="Center" 
+                        Grid.Row="0" 
+                        Grid.Column="1"
+                        Title="OCCUPANTS"/>
+
+                
+                <!--Price p/p (per person) UI-->
+                <StackLayout Orientation="Horizontal" 
+                             Grid.Row="1" 
+                             Grid.Column="0">
+                    
+                    <Image Source="money.png" 
+                           Aspect="AspectFit" 
+                           VerticalOptions="Center"/>
+                    
+                    <Label Text="PRICE P/P (PER PERSON)" 
+                           FontSize="Default" 
+                           VerticalOptions="Center" 
+                           TextColor="Black"
+                           FontAttributes="Bold"/>
+                    
+                </StackLayout>
+
+                <Entry WidthRequest="80"
+                       Keyboard="Numeric" 
+                       x:Name="priceEntry" 
+                       VerticalOptions="Center" 
+                       Grid.Row="1" 
+                       Grid.Column="1"
+                       Placeholder="R 0,00"
+                       MaxLength="5"
+                       TextChanged="PriceEntry_TextChanged"/>
+
+                
+                <!--Amount collected UI-->
+                <StackLayout Orientation="Horizontal" 
+                             Grid.Row="2" 
+                             Grid.Column="0">
+
+                    <Image Source="money.png" 
+                           Aspect="AspectFit" 
+                           VerticalOptions="Center"/>
+
+                    <Label Text="AMOUNT COLLECTED" 
+                           FontSize="Default" 
+                           VerticalOptions="Center" 
+                           TextColor="Black"
+                           FontAttributes="Bold"/>
+
+                </StackLayout>
+
+                <Entry WidthRequest="80" 
+                       Keyboard="Numeric" 
+                       x:Name="amountCollectedEntry" 
+                       VerticalOptions="Center" 
+                       Grid.Row="2" 
+                       Grid.Column="1"
+                       Placeholder="R 0,00"
+                       MaxLength="5"
+                       TextChanged="AmountCollectedEntry_TextChanged"/>
+                
+
+                <!--Driver amount UI-->
+                <StackLayout Orientation="Horizontal" 
+                             Grid.Row="3" 
+                             Grid.Column="0">
+
+                    <Image Source="driver.png" 
+                           Aspect="AspectFit" 
+                           VerticalOptions="Center"/>
+
+                    <Label Text="DRIVER'S TOTAL" 
+                           FontSize="Default" 
+                           VerticalOptions="Center" 
+                           TextColor="Black"
+                           FontAttributes="Bold"/>
+
+                </StackLayout>
+
+                <Label WidthRequest="80" 
+                       x:Name="driversAmountLbl" 
+                       VerticalOptions="Center" 
+                       Grid.Row="3" 
+                       Grid.Column="1"
+                       FontSize="18"
+                       TextColor="Black"/>
+                
+
+                <!--Change amount UI-->
+                <StackLayout Orientation="Horizontal" 
+                             Grid.Row="4" 
+                             Grid.Column="0">
+
+                    <Image Source="coins.png" 
+                           Aspect="AspectFit" 
+                           VerticalOptions="Center"/>
+
+                    <Label FontSize="Default" 
+                           VerticalOptions="Center" 
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           x:Name="changeLbl"/>
+
+                </StackLayout>
+
+                <Label WidthRequest="80" 
+                       x:Name="changeAmountLbl" 
+                       VerticalOptions="Center" 
+                       Grid.Row="4" 
+                       Grid.Column="1"
+                       FontSize="18"
+                       TextColor="Black"/>
+
+            </Grid>
+
+            <Frame Grid.Row="3" 
+                   Margin="10,20"
+                   CornerRadius="15"
+                   HasShadow="True">
+
+                <Label FontSize="Default" 
+                       FontAttributes="Bold"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Black"
+                       x:Name="outstandingAmountLbl"/>
+            </Frame>
+
+            <!--Calculate button-->
+            <Button Style="{StaticResource ButtonStyle}" 
+                    Grid.Row="4" 
+                    TranslationY="-20" 
+                    Text="CALCULATE CHANGE" 
+                    x:Name="CalculateBtn" 
+                    Clicked="CalculateBtn_Clicked"
+                    VerticalOptions="EndAndExpand"/>
+      
+        </Grid>
+
+    </ContentPage>
+
+</TabbedPage>

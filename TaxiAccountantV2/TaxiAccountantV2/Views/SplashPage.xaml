@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="TaxiAccountantV2.Views.SplashPage"
+			 xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+			 BackgroundColor="Gold">
+
+	<StackLayout HorizontalOptions="CenterAndExpand" 
+					 VerticalOptions="CenterAndExpand">
+        
+        <!--
+		<ffimageloading:CachedImage HorizontalOptions="Center" 
+									VerticalOptions="Center"
+									DownsampleToViewSize="true"
+									Source = "loading.gif"
+									WidthRequest="50"
+									HeightRequest="50"
+                                    x:Name="loadingGIF">
+		</ffimageloading:CachedImage>
+        -->
+
+        <ffimageloading:CachedImage HorizontalOptions="Center" 
+									VerticalOptions="Center"
+									DownsampleToViewSize="true"
+									Source = "taxi.png"
+									WidthRequest="100"
+									HeightRequest="100"
+                                    x:Name="carImage">
+        </ffimageloading:CachedImage>
+
+        <!--
+        <ActivityIndicator HorizontalOptions="CenterAndExpand" 
+                           VerticalOptions="CenterAndExpand" 
+                           Color="Black" 
+                           IsRunning="True"
+                           x:Name="loadingGIF"
+                           Margin="0,150,0,0"/>
+        -->
+        
+        <Label Text="Warming up...." 
+               FontSize="Title" 
+               FontAttributes="Bold"
+			   VerticalTextAlignment="Center"
+			   VerticalOptions="CenterAndExpand"
+			   HorizontalTextAlignment="Center"
+			   HorizontalOptions="CenterAndExpand"
+			   Margin="0,35,0,0"
+			   TextColor="Black"
+               x:Name="textLogo"/>
+
+	</StackLayout>
+
+</ContentPage>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaxiAccountantV2.Views.NotificationSettingsPage"
+            Title="Notifications"
+            IconImageSource="notif.png"
+            Style="{StaticResource BarStyle}">
+
+    <ContentPage>
+
+        <Grid Margin="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Notifications heading-->
+            <Frame Grid.Row="0" 
+                   VerticalOptions="Center">
+                
+                <Label Style="{StaticResource LabelStyle}" 
+                       Text="SUBSCRIBE TO NOTIFICATIONS" 
+                       FontSize="Title" 
+                       HorizontalOptions="Center" 
+                       HorizontalTextAlignment="Center"/>
+            </Frame>
+
+
+            <!--Notifications settings-->
+            <TableView Grid.Row="1" Intent="Settings" HasUnevenRows="True">
+                <TableRoot>
+                    <TableSection>
+                        <SwitchCell Text="Tariff notifications" 
+                                    OnColor="OrangeRed" 
+                                    x:Name="TariffSwitch"/>
+                        
+                        <SwitchCell Text="Strike notifications" 
+                                    OnColor="OrangeRed" 
+                                    x:Name="StrikeSwitch"/>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            
+            <!--Notifications list-->
+            <ContentView Grid.Row="2">
+                <ListView  x:Name="NewsList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell DetailColor="Black" 
+                                       TextColor="Black" 
+                                       Text="{Binding NewsNameType}" 
+                                       ImageSource="info.png" 
+                                       Detail="{Binding NewsText}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ContentView>
+
+
+            <!--Filter button-->
+            <Button Style="{StaticResource ButtonStyle}" 
+                    Grid.Row="3" 
+                    TranslationY="-20" 
+                    Text="Filter" 
+                    x:Name="SubscribeBtn" 
+                    Clicked="SubscribeBtn_Clicked"/>
+        </Grid>
+
+    </ContentPage>
+
+</TabbedPage>

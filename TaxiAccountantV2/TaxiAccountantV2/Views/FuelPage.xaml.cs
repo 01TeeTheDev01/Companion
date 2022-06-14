@@ -122,57 +122,58 @@ namespace TaxiAccountantV2.Views
         {
             double priceOfFuel;
 
-            switch (fuelPicker.SelectedIndex)
+            try
             {
-                case 0:
-                    if (decimal.Parse(fuelCapacity.SelectedItem.ToString()) != -1)
-                    {
-                        priceOfFuel = await service.CalculateFuelPrice(fuelCapacity.SelectedItem.ToString(), service.GetFuel().Result[0].PricePerLitre);
+                switch (fuelPicker.SelectedIndex)
+                {
+                    case 0:
+                        if (int.Parse(fuelCapacity.SelectedItem.ToString()) > 0)
+                        {
+                            priceOfFuel = await service.CalculateFuelPrice(fuelCapacity.SelectedItem.ToString(), service.GetFuel().Result[0].PricePerLitre);
 
-                        var currency = priceOfFuel.ToString(new CultureInfo("en-ZA"));
+                            var currency = priceOfFuel.ToString(new CultureInfo("en-ZA"));
 
-                        LitresLbl.Text = $"R {string.Format("{0:c2}", currency)}";
-                    }
-                    else
-                        await DisplayAlert("Error", "Your litre capacity is less than the fuel price per litre.", "OK");
-                    break;
+                            LitresLbl.Text = $"R {string.Format("{0:c2}", currency)}";
+                        }
+                        else
+                            await DisplayAlert("Error", "Your litre capacity is less than the fuel price per litre.", "OK");
+                        break;
 
-                case 1:
-                    if(decimal.Parse(fuelCapacity.SelectedItem.ToString()) != -1)
-                    {
-                        priceOfFuel = await service.CalculateFuelPrice(fuelCapacity.SelectedItem.ToString(), service.GetFuel().Result[1].PricePerLitre);
+                    case 1:
+                        if (int.Parse(fuelCapacity.SelectedItem.ToString()) > 0)
+                        {
+                            priceOfFuel = await service.CalculateFuelPrice(fuelCapacity.SelectedItem.ToString(), service.GetFuel().Result[1].PricePerLitre);
 
-                        var currency = priceOfFuel.ToString(new CultureInfo("en-ZA"));
+                            var currency = priceOfFuel.ToString(new CultureInfo("en-ZA"));
 
-                        LitresLbl.Text = $"R {string.Format("{0:c2}", currency)}";
-                    }
-                    else
-                        await DisplayAlert("Error", "Your litre capacity is less than the fuel price per litre.", "OK");
-                    break;
+                            LitresLbl.Text = $"R {string.Format("{0:c2}", currency)}";
+                        }
+                        else
+                            await DisplayAlert("Error", "Your litre capacity is less than the fuel price per litre.", "OK");
+                        break;
 
-                case 2:
-                    if(decimal.Parse(fuelCapacity.SelectedItem.ToString()) != -1)
-                    {
-                        priceOfFuel = await service.CalculateFuelPrice(fuelCapacity.SelectedItem.ToString(), service.GetFuel().Result[2].PricePerLitre);
+                    case 2:
+                        if (int.Parse(fuelCapacity.SelectedItem.ToString()) > 0)
+                        {
+                            priceOfFuel = await service.CalculateFuelPrice(fuelCapacity.SelectedItem.ToString(), service.GetFuel().Result[2].PricePerLitre);
 
-                        var currency = priceOfFuel.ToString(new CultureInfo("en-ZA"));
+                            var currency = priceOfFuel.ToString(new CultureInfo("en-ZA"));
 
-                        LitresLbl.Text = $"R {string.Format("{0:c2}", currency)}";
-                    }
-                    else
-                        await DisplayAlert("Error", "Your litre capacity is less than the fuel price per litre.", "OK");
-                    break;
+                            LitresLbl.Text = $"R {string.Format("{0:c2}", currency)}";
+                        }
+                        else
+                            await DisplayAlert("Error", "Your litre capacity is less than the fuel price per litre.", "OK");
+                        break;
 
-                default:
-                    await DisplayAlert("Error", "Select a fuel type.", "OK");
-                    break;
+                    default:
+                        await DisplayAlert("Error", "Select a fuel type.", "OK");
+                        break;
+                }
             }
-        }
-
-        private void AmountEntry_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            //if (amountEntry.Text == string.Empty)
-            //    amountEntry.Text = "0lt";
+            catch (Exception err)
+            {
+                await DisplayAlert("Error", $"Message: {err.Message}", "OK");
+            }
         }
     }
 }

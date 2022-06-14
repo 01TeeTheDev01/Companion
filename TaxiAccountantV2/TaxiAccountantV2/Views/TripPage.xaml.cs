@@ -21,8 +21,6 @@ namespace TaxiAccountantV2.Views
         
         private readonly Timer timer;
         
-        //private int count;
-
         public TripPage()
         {
             InitializeComponent();
@@ -52,8 +50,6 @@ namespace TaxiAccountantV2.Views
             {
                 try
                 {
-                    //count++;
-
                     var result = await Geolocation.GetLocationAsync();
 
                     if (result != null)
@@ -78,9 +74,6 @@ namespace TaxiAccountantV2.Views
                                                $"{location.ElementAt(0).AdminArea}, " +
                                                $"{location.ElementAt(0).CountryName}";
                     }
-
-                    //if (count > 60)
-                    //    count = 0;
                 }
                 catch (Exception ex)
                 {

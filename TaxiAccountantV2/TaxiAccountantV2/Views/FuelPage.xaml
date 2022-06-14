@@ -106,7 +106,8 @@
                         Grid.Column="1"
                         Title="FUEL"
                         ItemsSource="{Binding FuelTypes}"
-                        SelectedIndexChanged="FuelPicker_SelectedIndexChanged"/>
+                        SelectedIndexChanged="FuelPicker_SelectedIndexChanged"
+                        TextColor="Black"/>
 
 
                 <!--Price p/l (per litre) UI-->
@@ -132,7 +133,8 @@
                        VerticalOptions="Center" 
                        Text="R 0,00"
                        FontSize="18"
-                       FontAttributes="Bold"/>
+                       FontAttributes="Bold"
+                       TextColor="Black"/>
 
 
                 <!--Fuel amount in litres UI-->
@@ -158,7 +160,8 @@
                        VerticalOptions="Center"
                        Text="R 0,00"
                        FontSize="18"
-                       FontAttributes="Bold"/>
+                       FontAttributes="Bold"
+                       TextColor="Black"/>
                 
                 
                 <!--Litres collected UI-->
@@ -187,7 +190,8 @@
                        MaxLength="5"
                        FontSize="18"
                        FontAttributes="Bold"
-                       TextChanged="AmountEntry_TextChanged"/>
+                       TextChanged="AmountEntry_TextChanged"
+                       TextColor="Black"/>
                 
             </Grid>
             

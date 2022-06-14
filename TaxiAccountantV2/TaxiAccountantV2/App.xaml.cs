@@ -14,7 +14,7 @@ namespace TaxiAccountantV2
 
         protected override void OnStart()
         {
-            MainPage = new TripPage();
+            MainPage = new SplashPage();
         }
 
         protected override void OnSleep()
@@ -24,7 +24,7 @@ namespace TaxiAccountantV2
 
         protected override void OnResume()
         {
-            //MainPage = new MainPage();
+            MainPage = new MainPage();
         }
     }
 }

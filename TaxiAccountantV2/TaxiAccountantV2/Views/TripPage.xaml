@@ -162,7 +162,8 @@
                         VerticalOptions="Center" 
                         Grid.Row="0" 
                         Grid.Column="1"
-                        Title="OCCUPANTS"/>
+                        Title="OCCUPANTS"
+                        TextColor="Black"/>
 
                 
                 <!--Price p/p (per person) UI-->
@@ -189,7 +190,8 @@
                        Grid.Column="1"
                        Placeholder="R 0,00"
                        MaxLength="5"
-                       TextChanged="PriceEntry_TextChanged"/>
+                       TextChanged="PriceEntry_TextChanged"
+                       TextColor="Black"/>
 
                 
                 <!--Amount collected UI-->
@@ -216,7 +218,8 @@
                        Grid.Column="1"
                        Placeholder="R 0,00"
                        MaxLength="5"
-                       TextChanged="AmountCollectedEntry_TextChanged"/>
+                       TextChanged="AmountCollectedEntry_TextChanged"
+                       TextColor="Black"/>
                 
 
                 <!--Driver amount UI-->

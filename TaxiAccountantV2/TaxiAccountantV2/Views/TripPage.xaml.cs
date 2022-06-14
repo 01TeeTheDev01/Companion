@@ -100,7 +100,7 @@ namespace TaxiAccountantV2.Views
         {
             amountCollectedEntry.Text = String.Empty;
             priceEntry.Text = String.Empty;
-            outstandingAmountLbl.Text = String.Empty;
+            //outstandingAmountLbl.Text = String.Empty;
             changeAmountLbl.Text = String.Empty;
             driversAmountLbl.Text = String.Empty;
         }
@@ -152,14 +152,14 @@ namespace TaxiAccountantV2.Views
                             if (result.Result < 0.0m)
                             {
                                 driversAmountLbl.TextColor = Color.Red;
-                                outstandingAmountLbl.Text = trip.Message;
                                 changeLbl.Text = "OUTSTANDING AMOUNT";
+                                await DisplayAlert("Message", trip.Message, "OK");
                             }
                             else
                             {
                                 driversAmountLbl.TextColor = Color.Green;
                                 changeLbl.Text = "CHANGE";
-                                outstandingAmountLbl.Text = string.Empty;
+                                //outstandingAmountLbl.Text = string.Empty;
                             }
 
                             driversAmountLbl.Text = trip.DriverAmount;
@@ -189,7 +189,7 @@ namespace TaxiAccountantV2.Views
         private void ClearLabels()
         {
             driversAmountLbl.Text = string.Empty;
-            outstandingAmountLbl.Text = string.Empty;
+            //outstandingAmountLbl.Text = string.Empty;
             changeAmountLbl.Text = string.Empty;
         }
     }

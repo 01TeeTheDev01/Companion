@@ -13,7 +13,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
@@ -46,6 +46,7 @@
                 </Grid>
                 
             </Frame>
+            
 
             <!--Title UI-->
             <Grid Grid.Row="1"
@@ -64,6 +65,7 @@
                 </Frame>
 
             </Grid>
+            
 
             <!--Fuel controls UI-->
             <Grid Grid.Row="2" 
@@ -191,6 +193,7 @@
                        TextChanged="AmountEntry_TextChanged"/>
                 
             </Grid>
+            
 
             <Frame Grid.Row="3" 
                    Margin="10,20"
@@ -203,9 +206,10 @@
                        Aspect="AspectFit"/>
             </Frame>
 
+            
             <!--Calculate button-->
-            <Button Style="{StaticResource ButtonStyle}" 
-                    Grid.Row="4"
+            <Button Grid.Row="4"
+                    Style="{StaticResource ButtonStyle}" 
                     Text="CALCULATE" 
                     x:Name="CalculateBtn"
                     VerticalOptions="EndAndExpand"

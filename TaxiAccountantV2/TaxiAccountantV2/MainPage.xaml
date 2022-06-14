@@ -8,6 +8,7 @@
     <local:HomePage/>
     <local:TripPage/>
     <local:CarCalculatorPage/>
+    <local:EmergencyNumbersPage/>
     <local:NotificationSettingsPage/>
 
 </TabbedPage>

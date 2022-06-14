@@ -15,8 +15,6 @@ namespace TaxiAccountantV2
         protected override void OnStart()
         {
             MainPage = new SplashPage();
-            //MainPage = new TripPage();
-            //MainPage = new CarCalculatorPage();
         }
 
         protected override void OnSleep()

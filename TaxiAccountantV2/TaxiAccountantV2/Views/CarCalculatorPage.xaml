@@ -210,7 +210,6 @@
                     x:Name="CalculateBtn"
                     VerticalOptions="EndAndExpand"
                     Clicked="CalculateBtn_Clicked"/>
-
         </Grid>
 
     </ContentPage>

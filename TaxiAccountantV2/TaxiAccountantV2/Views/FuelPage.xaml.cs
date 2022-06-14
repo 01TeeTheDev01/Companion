@@ -16,13 +16,13 @@ using Xamarin.Forms.Xaml;
 namespace TaxiAccountantV2.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CarCalculatorPage : TabbedPage
+    public partial class FuelPage : TabbedPage
     {
         private readonly FuelService service;
 
         private readonly Timer timer;
 
-        public CarCalculatorPage()
+        public FuelPage()
         {
             InitializeComponent();
 

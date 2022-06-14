@@ -138,7 +138,7 @@
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width=".5*"/>
                 </Grid.ColumnDefinitions>
 
                 <!--Passenger UI-->
@@ -174,7 +174,7 @@
                            Aspect="AspectFit" 
                            VerticalOptions="Center"/>
                     
-                    <Label Text="PRICE P/P (PER PERSON)" 
+                    <Label Text="PRICE PER PERSON" 
                            FontSize="Default" 
                            VerticalOptions="Center" 
                            TextColor="Black"
@@ -182,8 +182,7 @@
                     
                 </StackLayout>
 
-                <Entry WidthRequest="80"
-                       Keyboard="Numeric" 
+                <Entry Keyboard="Numeric" 
                        x:Name="priceEntry" 
                        VerticalOptions="Center" 
                        Grid.Row="1" 
@@ -210,8 +209,7 @@
 
                 </StackLayout>
 
-                <Entry WidthRequest="80" 
-                       Keyboard="Numeric" 
+                <Entry Keyboard="Numeric" 
                        x:Name="amountCollectedEntry" 
                        VerticalOptions="Center" 
                        Grid.Row="2" 
@@ -238,8 +236,7 @@
 
                 </StackLayout>
 
-                <Label WidthRequest="80" 
-                       x:Name="driversAmountLbl" 
+                <Label x:Name="driversAmountLbl" 
                        VerticalOptions="Center" 
                        Grid.Row="3" 
                        Grid.Column="1"
@@ -264,8 +261,7 @@
 
                 </StackLayout>
 
-                <Label WidthRequest="80" 
-                       x:Name="changeAmountLbl" 
+                <Label x:Name="changeAmountLbl" 
                        VerticalOptions="Center" 
                        Grid.Row="4" 
                        Grid.Column="1"

@@ -7,7 +7,7 @@
 
     <local:HomePage/>
     <local:TripPage/>
-    <local:CarCalculatorPage/>
+    <local:FuelPage/>
     <local:EmergencyNumbersPage/>
     <!--<local:NotificationSettingsPage/>-->
 

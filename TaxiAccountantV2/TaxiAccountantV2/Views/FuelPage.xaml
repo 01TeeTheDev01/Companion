@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TaxiAccountantV2.Views.CarCalculatorPage"
+             x:Class="TaxiAccountantV2.Views.FuelPage"
             Title="Fuel"
             IconImageSource="gas.png"
             Style="{StaticResource BarStyle}">
@@ -79,22 +79,22 @@
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width=".5*"/>
                 </Grid.ColumnDefinitions>
 
                 
                 <!--Fuel type UI-->
-                <StackLayout Orientation="Horizontal" 
-                             Grid.Row="0" 
-                             Grid.Column="0">
+                <StackLayout Grid.Row="0" 
+                             Grid.Column="0"
+                             Orientation="Horizontal">
 
                     <Image Source="gas.png" 
                            Aspect="AspectFit" 
                            VerticalOptions="Center"/>
 
-                    <Label Text="FUEL TYPE" 
+                    <Label Text="FUEL" 
                            FontSize="Default" 
-                           VerticalOptions="Center" 
+                           VerticalOptions="CenterAndExpand" 
                            TextColor="Black"
                            FontAttributes="Bold"/>
 
@@ -110,9 +110,9 @@
 
 
                 <!--Price p/l (per litre) UI-->
-                <StackLayout Orientation="Horizontal" 
-                             Grid.Row="1" 
-                             Grid.Column="0">
+                <StackLayout Grid.Row="1" 
+                             Grid.Column="0"
+                             Orientation="Horizontal">
 
                     <Image Source="money.png" 
                            Aspect="AspectFit" 
@@ -126,20 +126,19 @@
 
                 </StackLayout>
 
-                <Label WidthRequest="130"
+                <Label Grid.Row="1" 
+                       Grid.Column="1"
                        x:Name="pricePerLitreLbl" 
                        VerticalOptions="Center" 
-                       Grid.Row="1" 
-                       Grid.Column="1"
                        Text="R 0,00"
                        FontSize="18"
                        FontAttributes="Bold"/>
 
 
                 <!--Fuel amount in litres UI-->
-                <StackLayout Orientation="Horizontal" 
-                             Grid.Row="2" 
-                             Grid.Column="0">
+                <StackLayout Grid.Row="2" 
+                             Grid.Column="0"
+                             Orientation="Horizontal" >
 
                     <Image Source="money.png" 
                            Aspect="AspectFit" 
@@ -153,26 +152,25 @@
 
                 </StackLayout>
 
-                <Label WidthRequest="80" 
+                <Label Grid.Row="2" 
+                       Grid.Column="1"
                        x:Name="LitresLbl" 
                        VerticalOptions="Center"
-                       Grid.Row="2" 
-                       Grid.Column="1"
                        Text="R 0,00"
                        FontSize="18"
                        FontAttributes="Bold"/>
                 
                 
                 <!--Litres collected UI-->
-                <StackLayout Orientation="Horizontal" 
-                             Grid.Row="3" 
-                             Grid.Column="0">
+                <StackLayout Grid.Row="3" 
+                             Grid.Column="0"
+                             Orientation="Horizontal">
 
                     <Image Source="gas.png" 
                            Aspect="AspectFit" 
                            VerticalOptions="Center"/>
 
-                    <Label Text="VEHICLE FUEL CAPACITY" 
+                    <Label Text="LITRES" 
                            FontSize="Default" 
                            VerticalOptions="Center" 
                            TextColor="Black"
@@ -180,12 +178,11 @@
 
                 </StackLayout>
 
-                <Entry WidthRequest="120" 
+                <Entry Grid.Row="3" 
+                       Grid.Column="1" 
                        Keyboard="Numeric" 
                        x:Name="fuelCapacity" 
                        VerticalOptions="Center" 
-                       Grid.Row="3" 
-                       Grid.Column="1"
                        Placeholder="0 LT"
                        MaxLength="5"
                        FontSize="18"
@@ -198,7 +195,8 @@
             <Frame Grid.Row="3" 
                    Margin="10,20"
                    CornerRadius="15"
-                   HasShadow="True">
+                   HasShadow="True"
+                   VerticalOptions="Center">
 
                 <Image VerticalOptions="CenterAndExpand"
                        HorizontalOptions="CenterAndExpand"
@@ -212,7 +210,7 @@
                     Style="{StaticResource ButtonStyle}" 
                     Text="CALCULATE" 
                     x:Name="CalculateBtn"
-                    VerticalOptions="EndAndExpand"
+                    VerticalOptions="End"
                     Clicked="CalculateBtn_Clicked"/>
         </Grid>
 

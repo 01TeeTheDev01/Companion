@@ -9,6 +9,6 @@
     <local:TripPage/>
     <local:CarCalculatorPage/>
     <local:EmergencyNumbersPage/>
-    <local:NotificationSettingsPage/>
+    <!--<local:NotificationSettingsPage/>-->
 
 </TabbedPage>

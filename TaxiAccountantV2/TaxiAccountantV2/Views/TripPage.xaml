@@ -13,9 +13,9 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
             <!--Location bar UI-->
@@ -24,7 +24,6 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
-                        <!--<ColumnDefinition Width="*"/>-->
                     </Grid.ColumnDefinitions>
 
                     <!--Location lable + icon-->
@@ -43,17 +42,7 @@
                                x:Name="LocationLbl"/>
 
                     </StackLayout>
-
-                    <!--Name of location-->
-                    <!--
-                    <Label Grid.Column="1"  
-                           Style="{StaticResource LabelStyle}" 
-                           Text="TEST LOCATION" 
-                           FontSize="Default" 
-                           HorizontalOptions="CenterAndExpand" 
-                           VerticalOptions="CenterAndExpand"
-                           HorizontalTextAlignment="Center"/>
-                    -->
+                    
                 </Grid>
             </Frame>
 
@@ -297,9 +286,8 @@
 
             <!--Calculate button-->
             <Button Style="{StaticResource ButtonStyle}" 
-                    Grid.Row="4" 
-                    TranslationY="-20" 
-                    Text="CALCULATE CHANGE" 
+                    Grid.Row="4"
+                    Text="CALCULATE" 
                     x:Name="CalculateBtn" 
                     Clicked="CalculateBtn_Clicked"
                     VerticalOptions="EndAndExpand"/>

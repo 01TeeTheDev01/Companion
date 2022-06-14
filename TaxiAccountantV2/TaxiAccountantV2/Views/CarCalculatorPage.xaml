@@ -13,7 +13,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
@@ -205,8 +205,7 @@
 
             <!--Calculate button-->
             <Button Style="{StaticResource ButtonStyle}" 
-                    Grid.Row="4" 
-                    TranslationY="-20" 
+                    Grid.Row="4"
                     Text="CALCULATE" 
                     x:Name="CalculateBtn"
                     VerticalOptions="EndAndExpand"

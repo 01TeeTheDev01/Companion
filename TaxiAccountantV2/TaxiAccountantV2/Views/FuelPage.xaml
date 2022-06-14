@@ -107,7 +107,8 @@
                         Title="FUEL"
                         ItemsSource="{Binding FuelTypes}"
                         SelectedIndexChanged="FuelPicker_SelectedIndexChanged"
-                        TextColor="Black"/>
+                        TextColor="Black"
+                        TitleColor="Gray"/>
 
 
                 <!--Price p/l (per litre) UI-->
@@ -191,7 +192,8 @@
                        FontSize="18"
                        FontAttributes="Bold"
                        TextChanged="AmountEntry_TextChanged"
-                       TextColor="Black"/>
+                       TextColor="Black"
+                       PlaceholderColor="Gray"/>
                 
             </Grid>
             

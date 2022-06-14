@@ -33,15 +33,15 @@
                                Aspect="AspectFit" 
                                Margin="0,0,10,0"/>
 
-                        <Label Style="{StaticResource LabelStyle}"  
+                        <Label Style="{StaticResource LabelStyle}" 
                                FontSize="Default" 
-                               HorizontalOptions="CenterAndExpand" 
+                               HorizontalOptions="StartAndExpand" 
                                VerticalOptions="CenterAndExpand"
                                HorizontalTextAlignment="Center"
                                x:Name="LocationLbl"/>
 
                     </StackLayout>
-                    
+
                 </Grid>
             </Frame>
 
@@ -83,7 +83,9 @@
                              HorizontalOptions="Center">
                     
                     <RadioButton VerticalOptions="CenterAndExpand" 
-                                 x:Name="carPoolRadio"/>
+                                 x:Name="carPoolRadio"
+                                 BackgroundColor="Gold"
+                                 CornerRadius="15"/>
 
                     <Image Source="carpool.png" 
                            Aspect="AspectFit"
@@ -98,7 +100,10 @@
                              VerticalOptions="Center"
                              HorizontalOptions="Center">
 
-                    <RadioButton VerticalOptions="CenterAndExpand" x:Name="miniBusRadio" />
+                    <RadioButton VerticalOptions="CenterAndExpand" 
+                                 x:Name="miniBusRadio"
+                                 BackgroundColor="Gold"
+                                 CornerRadius="15"/>
 
                     <Image Source="shuttle.png" 
                            Aspect="AspectFit"
@@ -114,7 +119,10 @@
                              VerticalOptions="Center"
                              HorizontalOptions="Center">
 
-                    <RadioButton VerticalOptions="CenterAndExpand" x:Name="busRadio" />
+                    <RadioButton VerticalOptions="CenterAndExpand"
+                                 x:Name="busRadio"
+                                 BackgroundColor="Gold"
+                                 CornerRadius="15"/>
 
                     <Image Source="bus.png" 
                            Aspect="AspectFit"
@@ -163,7 +171,8 @@
                         Grid.Row="0" 
                         Grid.Column="1"
                         Title="OCCUPANTS"
-                        TextColor="Black"/>
+                        TextColor="Black"
+                        TitleColor="Gray"/>
 
                 
                 <!--Price p/p (per person) UI-->
@@ -191,7 +200,8 @@
                        Placeholder="R 0,00"
                        MaxLength="5"
                        TextChanged="PriceEntry_TextChanged"
-                       TextColor="Black"/>
+                       TextColor="Black"
+                       PlaceholderColor="Gray"/>
 
                 
                 <!--Amount collected UI-->
@@ -219,7 +229,8 @@
                        Placeholder="R 0,00"
                        MaxLength="5"
                        TextChanged="AmountCollectedEntry_TextChanged"
-                       TextColor="Black"/>
+                       TextColor="Black"
+                       PlaceholderColor="Gray"/>
                 
 
                 <!--Driver amount UI-->

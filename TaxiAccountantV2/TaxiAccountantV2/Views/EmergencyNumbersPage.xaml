@@ -76,7 +76,9 @@
 
                 <Picker Grid.Row="0" 
                         x:Name="EmergencyListView"
-                        Title="Emergency numbers"/>
+                        Title="Emergency numbers"
+                        TitleColor="Gray"
+                        TextColor="Black"/>
 
             </Grid>
 

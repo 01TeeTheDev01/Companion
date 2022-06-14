@@ -101,10 +101,10 @@ namespace TaxiAccountantV2.Views
         {
             if (!string.IsNullOrWhiteSpace(emergencyObject.ServiceName) && !string.IsNullOrEmpty(emergencyObject.ServiceName))
             {
-                try 
+                try
                 {
-                    var result = await DisplayActionSheet($"Place call to {emergencyObject.ServiceName} - {emergencyObject.ServiceNumber}?", string.Empty, string.Empty,"YES", "NO");
-                    
+                    var result = await DisplayActionSheet($"Place call to {emergencyObject.ServiceName} - {emergencyObject.ServiceNumber}?", string.Empty, string.Empty, "YES", "NO");
+
                     if (result.Equals("YES"))
                     {
                         PhoneDialer.Open(emergencyObject.ServiceNumber);
@@ -119,6 +119,8 @@ namespace TaxiAccountantV2.Views
                     EmergencyListView.SelectedIndex = -1;
                 }
             }
+            else
+                await DisplayAlert("Error", "Message: Please select a service to call.", "OK");
         }
     }
 }

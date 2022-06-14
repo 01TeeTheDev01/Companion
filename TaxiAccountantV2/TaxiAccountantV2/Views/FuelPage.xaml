@@ -104,7 +104,8 @@
                         VerticalOptions="Center" 
                         Grid.Row="0" 
                         Grid.Column="1"
-                        Title="FUEL"
+                        FontAttributes="Bold"
+                        Title="FUEL TYPE"
                         ItemsSource="{Binding FuelTypes}"
                         SelectedIndexChanged="FuelPicker_SelectedIndexChanged"
                         TextColor="Black"
@@ -182,18 +183,15 @@
 
                 </StackLayout>
 
-                <Entry Grid.Row="3" 
+                <Picker Grid.Row="3" 
                        Grid.Column="1" 
-                       Keyboard="Numeric" 
                        x:Name="fuelCapacity" 
-                       VerticalOptions="Center" 
-                       Placeholder="0 LT"
-                       MaxLength="5"
+                       VerticalOptions="Center"
                        FontSize="18"
                        FontAttributes="Bold"
-                       TextChanged="AmountEntry_TextChanged"
                        TextColor="Black"
-                       PlaceholderColor="Gray"/>
+                       TitleColor="Gray"
+                       Title="LITRE(S)"/>
                 
             </Grid>
             

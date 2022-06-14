@@ -39,6 +39,8 @@ namespace TaxiAccountantV2.Views
             timer.Elapsed += Timer_Elapsed;
 
             GetFuelTypes();
+
+            fuelCapacity.ItemsSource = service.FuelLitres;
         }
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
@@ -97,7 +99,7 @@ namespace TaxiAccountantV2.Views
             {
                 LitresLbl.Text = string.Empty;
 
-                fuelCapacity.Text = string.Empty;
+                fuelCapacity.SelectedIndex = -1;
 
                 switch (picker.SelectedIndex)
                 {
@@ -123,9 +125,9 @@ namespace TaxiAccountantV2.Views
             switch (fuelPicker.SelectedIndex)
             {
                 case 0:
-                    if (decimal.Parse(fuelCapacity.Text) > 0)
+                    if (decimal.Parse(fuelCapacity.SelectedItem.ToString()) != -1)
                     {
-                        priceOfFuel = await service.CalculateFuelPrice(fuelCapacity.Text, service.GetFuel().Result[0].PricePerLitre);
+                        priceOfFuel = await service.CalculateFuelPrice(fuelCapacity.SelectedItem.ToString(), service.GetFuel().Result[0].PricePerLitre);
 
                         var currency = priceOfFuel.ToString(new CultureInfo("en-ZA"));
 
@@ -136,9 +138,9 @@ namespace TaxiAccountantV2.Views
                     break;
 
                 case 1:
-                    if(decimal.Parse(fuelCapacity.Text) > 0)
+                    if(decimal.Parse(fuelCapacity.SelectedItem.ToString()) != -1)
                     {
-                        priceOfFuel = await service.CalculateFuelPrice(fuelCapacity.Text, service.GetFuel().Result[1].PricePerLitre);
+                        priceOfFuel = await service.CalculateFuelPrice(fuelCapacity.SelectedItem.ToString(), service.GetFuel().Result[1].PricePerLitre);
 
                         var currency = priceOfFuel.ToString(new CultureInfo("en-ZA"));
 
@@ -149,9 +151,9 @@ namespace TaxiAccountantV2.Views
                     break;
 
                 case 2:
-                    if(decimal.Parse(fuelCapacity.Text) > 0)
+                    if(decimal.Parse(fuelCapacity.SelectedItem.ToString()) != -1)
                     {
-                        priceOfFuel = await service.CalculateFuelPrice(fuelCapacity.Text, service.GetFuel().Result[2].PricePerLitre);
+                        priceOfFuel = await service.CalculateFuelPrice(fuelCapacity.SelectedItem.ToString(), service.GetFuel().Result[2].PricePerLitre);
 
                         var currency = priceOfFuel.ToString(new CultureInfo("en-ZA"));
 

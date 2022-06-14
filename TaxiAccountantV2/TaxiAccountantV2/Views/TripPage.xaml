@@ -67,7 +67,7 @@
                        BackgroundColor="Gold">
                     
                     <Label Style="{StaticResource LabelStyle}"
-                           Text="MODE OF TRANSPORT" 
+                           Text="SELECT TRANSPORT" 
                            FontSize="Default" 
                            HorizontalOptions="CenterAndExpand" 
                            VerticalOptions="CenterAndExpand"
@@ -170,6 +170,7 @@
                         VerticalOptions="Center" 
                         Grid.Row="0" 
                         Grid.Column="1"
+                        FontAttributes="Bold"
                         Title="OCCUPANTS"
                         TextColor="Black"
                         TitleColor="Gray"/>
@@ -201,7 +202,8 @@
                        MaxLength="5"
                        TextChanged="PriceEntry_TextChanged"
                        TextColor="Black"
-                       PlaceholderColor="Gray"/>
+                       PlaceholderColor="Gray"
+                       FontAttributes="Bold"/>
 
                 
                 <!--Amount collected UI-->
@@ -230,7 +232,8 @@
                        MaxLength="5"
                        TextChanged="AmountCollectedEntry_TextChanged"
                        TextColor="Black"
-                       PlaceholderColor="Gray"/>
+                       PlaceholderColor="Gray"
+                       FontAttributes="Bold"/>
                 
 
                 <!--Driver amount UI-->
@@ -255,6 +258,7 @@
                        Grid.Row="3" 
                        Grid.Column="1"
                        FontSize="18"
+                       FontAttributes="Bold"
                        TextColor="Black"/>
                 
 
@@ -280,6 +284,7 @@
                        Grid.Row="4" 
                        Grid.Column="1"
                        FontSize="18"
+                       FontAttributes="Bold"
                        TextColor="Black"/>
 
             </Grid>

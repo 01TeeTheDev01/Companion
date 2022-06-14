@@ -42,7 +42,7 @@ namespace TaxiAccountantV2.Views
         private void LoadListItems()
         {
             foreach (var emergencyItem in emergencyService.emergencies.OrderBy(s => s.ServiceName))
-                EmergencyListView.Items.Add(emergencyItem.ServiceName);
+                EmergencyServicePicker.Items.Add(emergencyItem.ServiceName);
         }
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
@@ -88,39 +88,41 @@ namespace TaxiAccountantV2.Views
             CallService();
         }
 
-        private void CallService()
+        private async void CallService()
         {
-            for (int i = 0; i < emergencyService.emergencies.OrderBy(s => s.ServiceName).Count(); i++)
-            {
-                if (i == EmergencyListView.SelectedIndex)
-                    PlaceCall(emergencyService.emergencies.OrderBy(s => s.ServiceName).ElementAt(i));
-            }
+            if (EmergencyServicePicker.SelectedIndex != -1)
+                for (int i = 0; i < emergencyService.emergencies.OrderBy(s => s.ServiceName).Count(); i++)
+                {
+                    if (i == EmergencyServicePicker.SelectedIndex)
+                        PlaceCall(emergencyService.emergencies.OrderBy(s => s.ServiceName).ElementAt(i));
+                }
+            else
+                await DisplayAlert("Error", "Message: Please select a service to call.", "OK");
         }
 
         private async void PlaceCall(EmergencyModel emergencyObject)
         {
-            if (!string.IsNullOrWhiteSpace(emergencyObject.ServiceName) && !string.IsNullOrEmpty(emergencyObject.ServiceName))
+            if (emergencyObject != null)
             {
                 try
                 {
-                    var result = await DisplayActionSheet($"Place call to {emergencyObject.ServiceName} - {emergencyObject.ServiceNumber}?", string.Empty, string.Empty, "YES", "NO");
+                    var result = await DisplayActionSheet(title: $"Place call to {emergencyObject.ServiceName} - {emergencyObject.ServiceNumber}?", string.Empty, string.Empty, "YES", "NO");
 
                     if (result.Equals("YES"))
                     {
                         PhoneDialer.Open(emergencyObject.ServiceNumber);
-                        EmergencyListView.SelectedIndex = -1;
+
+                        EmergencyServicePicker.SelectedIndex = -1;
                     }
 
-                    EmergencyListView.SelectedIndex = -1;
+                    EmergencyServicePicker.SelectedIndex = -1;
                 }
                 catch (Exception err)
                 {
                     await DisplayAlert("Error", $"{err.Message}", "OK");
-                    EmergencyListView.SelectedIndex = -1;
+                    EmergencyServicePicker.SelectedIndex = -1;
                 }
             }
-            else
-                await DisplayAlert("Error", "Message: Please select a service to call.", "OK");
         }
     }
 }

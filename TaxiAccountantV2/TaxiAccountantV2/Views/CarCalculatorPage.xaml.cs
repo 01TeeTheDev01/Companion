@@ -22,7 +22,7 @@ namespace TaxiAccountantV2.Views
 
         private readonly Timer timer;
 
-        private int count;
+        //private int count;
 
         public CarCalculatorPage()
         {
@@ -32,8 +32,8 @@ namespace TaxiAccountantV2.Views
 
             timer = new Timer()
             { 
-                Interval = 1000, 
-                Enabled = false
+                Interval = 15000, 
+                Enabled = true
             };
 
             timer.Start();
@@ -49,11 +49,11 @@ namespace TaxiAccountantV2.Views
             {
                 try
                 {
-                    count++;
+                    //count++;
 
                     var result = await Geolocation.GetLocationAsync();
 
-                    if (result != null && count % 2 == 0)
+                    if (result != null)
                     {
                         var location = await Geocoding.GetPlacemarksAsync(result);
 
@@ -76,8 +76,8 @@ namespace TaxiAccountantV2.Views
                                                $"{location.ElementAt(0).CountryName}";
                     }
 
-                    if (count > 60)
-                        count = 0;
+                    //if (count > 60)
+                    //    count = 0;
                 }
                 catch (Exception ex)
                 {

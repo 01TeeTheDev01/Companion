@@ -8,66 +8,68 @@
 
     <ContentPage>
 
-        <Grid Margin="3">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
+        <ScrollView VerticalOptions="CenterAndExpand">
+            <Grid Margin="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
 
-            <!--Notifications heading-->
-            <Frame Grid.Row="0" 
+                <!--Notifications heading-->
+                <Frame Grid.Row="0" 
                    VerticalOptions="Center">
-                
-                <Label Style="{StaticResource LabelStyle}" 
+
+                    <Label Style="{StaticResource LabelStyle}" 
                        Text="SUBSCRIBE TO NOTIFICATIONS" 
                        FontSize="Title" 
                        HorizontalOptions="Center" 
                        HorizontalTextAlignment="Center"/>
-            </Frame>
+                </Frame>
 
 
-            <!--Notifications settings-->
-            <TableView Grid.Row="1" Intent="Settings" HasUnevenRows="True">
-                <TableRoot>
-                    <TableSection>
-                        <SwitchCell Text="Tariff notifications" 
+                <!--Notifications settings-->
+                <TableView Grid.Row="1" Intent="Settings" HasUnevenRows="True">
+                    <TableRoot>
+                        <TableSection>
+                            <SwitchCell Text="Tariff notifications" 
                                     OnColor="OrangeRed" 
                                     x:Name="TariffSwitch"/>
-                        
-                        <SwitchCell Text="Strike notifications" 
+
+                            <SwitchCell Text="Strike notifications" 
                                     OnColor="OrangeRed" 
                                     x:Name="StrikeSwitch"/>
-                    </TableSection>
-                </TableRoot>
-            </TableView>
+                        </TableSection>
+                    </TableRoot>
+                </TableView>
 
-            
-            <!--Notifications list-->
-            <ContentView Grid.Row="2">
-                <ListView  x:Name="NewsList">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ImageCell DetailColor="Black" 
+
+                <!--Notifications list-->
+                <ContentView Grid.Row="2">
+                    <ListView  x:Name="NewsList">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ImageCell DetailColor="Black" 
                                        TextColor="Black" 
                                        Text="{Binding NewsNameType}" 
                                        ImageSource="info.png" 
                                        Detail="{Binding NewsText}"/>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </ContentView>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ContentView>
 
 
-            <!--Filter button-->
-            <Button Style="{StaticResource ButtonStyle}" 
+                <!--Filter button-->
+                <Button Style="{StaticResource ButtonStyle}" 
                     Grid.Row="3" 
                     TranslationY="-20" 
                     Text="Filter" 
                     x:Name="SubscribeBtn" 
                     Clicked="SubscribeBtn_Clicked"/>
-        </Grid>
+            </Grid>
+        </ScrollView>
 
     </ContentPage>
 

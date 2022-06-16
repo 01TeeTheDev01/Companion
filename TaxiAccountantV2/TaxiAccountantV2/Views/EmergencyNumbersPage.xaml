@@ -8,97 +8,99 @@
     
     <ContentPage>
 
-        <Grid Margin="5">
+        <ScrollView VerticalOptions="CenterAndExpand">
+            <Grid Margin="5">
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
 
-            <!--Location bar UI-->
-            <Frame Grid.Row="0" 
+                <!--Location bar UI-->
+                <Frame Grid.Row="0" 
                    VerticalOptions="Center">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                    <!--Location lable + icon-->
-                    <StackLayout Grid.Column="0" Orientation="Horizontal">
+                        <!--Location lable + icon-->
+                        <StackLayout Grid.Column="0" Orientation="Horizontal">
 
-                        <Image HorizontalOptions="Start" 
+                            <Image HorizontalOptions="Start" 
                                Source="location.png" 
                                Aspect="AspectFit" 
                                Margin="0,0,10,0"/>
 
-                        <Label Style="{StaticResource LabelStyle}" 
+                            <Label Style="{StaticResource LabelStyle}" 
                                FontSize="Default" 
                                HorizontalOptions="StartAndExpand" 
                                VerticalOptions="CenterAndExpand"
                                HorizontalTextAlignment="Center"
                                x:Name="LocationLbl"/>
 
-                    </StackLayout>
+                        </StackLayout>
 
-                </Grid>
+                    </Grid>
 
-            </Frame>
+                </Frame>
 
-            
-            <!--Title UI-->
-            <Grid Grid.Row="1"
+
+                <!--Title UI-->
+                <Grid Grid.Row="1"
                   VerticalOptions="CenterAndExpand">
 
-                <!--Mode of transport heading-->
-                <Frame VerticalOptions="Center"
+                    <!--Mode of transport heading-->
+                    <Frame VerticalOptions="Center"
                        BackgroundColor="Gold">
 
-                    <Label Style="{StaticResource LabelStyle}"
+                        <Label Style="{StaticResource LabelStyle}"
                            Text="EMERGENCY SERVICES" 
                            FontSize="Default" 
                            HorizontalOptions="CenterAndExpand" 
                            VerticalOptions="CenterAndExpand"
                            HorizontalTextAlignment="Center"/>
-                </Frame>
+                    </Frame>
 
-            </Grid>
+                </Grid>
 
-            
-            <!--Emergency controls UI-->
-            <Grid Grid.Row="2" 
+
+                <!--Emergency controls UI-->
+                <Grid Grid.Row="2" 
                   Margin="10,35,10,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
-                <Picker Grid.Row="0" 
+                    <Picker Grid.Row="0" 
                         x:Name="EmergencyServicePicker"
                         Title="SELECT SERVICE"
-                        TitleColor="Gray"
+                        TitleColor="Black"
                         TextColor="Black"/>
 
-            </Grid>
+                </Grid>
 
-            
-            <!--Image-->
-            <Image Grid.Row="3"
+
+                <!--Image-->
+                <Image Grid.Row="3"
                    VerticalOptions="EndAndExpand"
                    Source="emergency.png"
                    Aspect="AspectFit"
                    Margin="30"/>
-            
-            
-            <!--Call button-->
-            <Button Grid.Row="4"
+
+
+                <!--Call button-->
+                <Button Grid.Row="4"
                     Style="{StaticResource ButtonStyle}"
                     Text="CALL" 
                     x:Name="CallBtn"
                     VerticalOptions="EndAndExpand"
                     Clicked="CallBtn_Clicked"/>
-        </Grid>
+            </Grid>
+        </ScrollView>
 
     </ContentPage>
     
